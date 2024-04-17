@@ -26,7 +26,7 @@ while True:
         data = stream.read(CHUNK)
 
         # Transcribe audio using OpenAI Whisper ASR API
-        response = GPT.transcribe(data,RATE,CHANNELS)#openai.Audio.transcribe(data, sample_rate_hertz=RATE, encoding='LINEAR16', num_channels=CHANNELS)
+        response = GPT.transcribe(data)#openai.Audio.transcribe(data, sample_rate_hertz=RATE, encoding='LINEAR16', num_channels=CHANNELS)
 
         if response.get("choices"):
             transcript = response["choices"][0]["text"]
